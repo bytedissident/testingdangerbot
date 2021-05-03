@@ -19,8 +19,14 @@ class TestDangerTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Attach the retrieved HTML data with an appropriate UTI.
+                   let html = XCTAttachment(string: "Log")
+                   html.name = "HTML"
+                    html
+                   // Keep the HTML attachment even when the test succeeds.
+                   html.lifetime = .keepAlways
+                   self.add(html)
+
     }
 
     func testPerformanceExample() throws {
